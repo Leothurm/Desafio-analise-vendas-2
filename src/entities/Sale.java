@@ -43,13 +43,13 @@ public class Sale {
 	}
 
 
-	public String getSales() {
+	public String getSeller() {
 		return seller;
 	}
 
 
-	public void setSales(String sales) {
-		this.seller = sales;
+	public void setSeller(String seller) {
+		this.seller = seller;
 	}
 
 
