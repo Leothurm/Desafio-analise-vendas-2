@@ -51,20 +51,15 @@ public class Program {
 				} else {
 					sales.put(sale.getSeller(), sale.getTotal() + sales.get(sale.getSeller()));
 				}
-		
-			}
-
-			
+			}	
 			Map<String, Double> salesOrdered = sales.entrySet()
 				.stream()	
 				.sorted(Map.Entry.comparingByValue())
 				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
-					
-			
+		
 			System.out.println("Total de vendas por vendedor em ordem crescente: ");
 			salesOrdered.forEach((key, value) -> System.out.println(key  + " - " +  String.format("%.2f",value)));
-					
-			
+							
 		} catch(IOException e) {
 			System.out.println("ERROR: " + e.getMessage());
 		}
